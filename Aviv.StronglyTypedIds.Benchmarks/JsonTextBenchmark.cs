@@ -5,13 +5,11 @@
 [MemoryDiagnoser(displayGenColumns: false)]
 public class JsonTextBenchmark
 {
-    private static readonly SavedSearchJsonContext JsonContext = new();
-    
     [Benchmark(Baseline = true)]
     public GetSavedSearchResponse Deserialize() =>
-        JsonSerializer.Deserialize(Database.Json, JsonContext.GetSavedSearchResponse)!;
+        JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponse)!;
 
     [Benchmark]
     public GetSavedSearchResponseWithUserId Deserialize_WithUserId() =>
-        JsonSerializer.Deserialize(Database.Json, JsonContext.GetSavedSearchResponseWithUserId)!;
+        JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponseWithUserId)!;
 }

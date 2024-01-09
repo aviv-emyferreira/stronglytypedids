@@ -2,8 +2,7 @@
 
 Console.WriteLine($"Json: {Database.Json}");
 
-SavedSearchJsonContext jsonContext = new();
 GetSavedSearchResponse getSavedSearchResponse =
-    JsonSerializer.Deserialize(Database.Json, jsonContext.GetSavedSearchResponse)!;
+    JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponse)!;
 
 Console.WriteLine($"Deserialized: {getSavedSearchResponse}");
