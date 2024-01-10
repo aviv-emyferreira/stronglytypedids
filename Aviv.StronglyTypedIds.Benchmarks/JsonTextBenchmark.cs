@@ -1,15 +1,13 @@
 ﻿namespace Aviv.StronglyTypedIds.Benchmarks;
 
-[RankColumn, Orderer(SummaryOrderPolicy.FastestToSlowest)]
-[MinColumn, MaxColumn]
-[MemoryDiagnoser(displayGenColumns: false)]
+[Config(typeof(BenchmarkConfig))]
 public class JsonTextBenchmark
 {
     [Benchmark(Baseline = true)]
-    public GetSavedSearchResponse Deserialize() =>
-        JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponse)!;
+    public GetSavedSearchResponse? Deserialize() =>
+        JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponse);
 
     [Benchmark]
-    public GetSavedSearchResponseWithUserId Deserialize_WithUserId() =>
-        JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponseWithUserId)!;
+    public GetSavedSearchResponseWithUserId? Deserialize_WithUserId() =>
+        JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponseWithUserId);
 }

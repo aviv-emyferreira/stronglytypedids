@@ -1,8 +1,6 @@
 ﻿namespace Aviv.StronglyTypedIds.Benchmarks;
 
-[RankColumn, Orderer(SummaryOrderPolicy.FastestToSlowest)]
-[MinColumn, MaxColumn]
-[MemoryDiagnoser(displayGenColumns: false)]
+[Config(typeof(BenchmarkConfig))]
 public class PassThroughArgumentBenchmark
 {
     private readonly Guid _userId = Guid.NewGuid();

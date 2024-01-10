@@ -1,6 +1,6 @@
 ﻿namespace Aviv.StronglyTypedIds.Demo.Domain;
 
-[StronglyTypedId(generateJsonConverter: false)]
+[StronglyTypedId(jsonConverter: StronglyTypedIdJsonConverter.SystemTextJson)]
 public readonly partial struct UserIdReadOnly
 {
 }

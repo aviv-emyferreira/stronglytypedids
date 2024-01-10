@@ -2,7 +2,7 @@
 
 Console.WriteLine($"Json: {Database.Json}");
 
-GetSavedSearchResponse getSavedSearchResponse =
-    JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponse)!;
+GetSavedSearchResponseWithUserId getSavedSearchResponse =
+    JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponseWithUserId)!;
 
 Console.WriteLine($"Deserialized: {getSavedSearchResponse}");

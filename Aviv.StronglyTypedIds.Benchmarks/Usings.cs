@@ -6,3 +6,8 @@ global using System.Text.Json;
 global using System.Text.Json.Serialization;
 global using Aviv.StronglyTypedIds.Demo;
 global using Aviv.StronglyTypedIds.Demo.Domain;
+global using BenchmarkDotNet.Columns;
+global using BenchmarkDotNet.Configs;
+global using BenchmarkDotNet.Diagnosers;
+global using BenchmarkDotNet.Jobs;
+global using BenchmarkDotNet.Toolchains.InProcess.NoEmit;

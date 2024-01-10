@@ -1,1 +1,3 @@
-﻿BenchmarkRunner.Run(typeof(Program).Assembly, args: args);
+﻿using Aviv.StronglyTypedIds.Benchmarks;
+
+BenchmarkRunner.Run<JsonTextBenchmark>(args: args);
