@@ -4,10 +4,10 @@
 public class JsonTextBenchmark
 {
     [Benchmark(Baseline = true)]
-    public GetSavedSearchResponse? Deserialize() =>
+    public GetSavedSearchResponse? Deserialize_WithString() =>
         JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponse);
 
     [Benchmark]
-    public GetSavedSearchResponseWithUserId? Deserialize_WithUserId() =>
+    public GetSavedSearchResponseWithUserId? Deserialize_WithStruct() =>
         JsonSerializer.Deserialize(Database.Json, SavedSearchJsonContext.Default.GetSavedSearchResponseWithUserId);
 }
