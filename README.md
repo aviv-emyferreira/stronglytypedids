@@ -9,6 +9,7 @@ Benchmark results for: [PassTroughArgumentBenchmark.cs](Aviv.StronglyTypedIds.Be
 * `GetHash` method uses `HashCode.Combine` to test the passing of arguments with different methods.
 * `ReadOnly` means that the struct itself uses the keyword `readonly`.
 * `InKeyword` means method called uses the `in` keyword.
+* The `GetHash_String` method uses `.ToString()` because it represents how it is used in the code before sending it into a method.
 
 ```
 
